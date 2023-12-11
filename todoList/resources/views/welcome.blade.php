@@ -19,12 +19,16 @@
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
 
             <div>
-                <h1>To do List</h1>
+                <h1>To Do List</h1>
 
-                <label for="listItem">New To Do Item </label>
-                </br>
-                <input type="text" name="listItem">
-                <button>Save Item</button>
+                <form method="post" action="{{ route('saveItem') }}" accept-charset="UTF-8">
+                    {{ csrf_field() }}
+
+                    <label for="listItem">New To Do Item </label></br>
+                    <input type="text" name="listItem"></br>
+                    <button type="submit">Save Item</button>
+
+                </form>
             </div>
 
         </div>
