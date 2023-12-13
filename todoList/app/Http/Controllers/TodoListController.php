@@ -8,6 +8,11 @@ use App\models\ListItem;
 
 class TodoListController extends Controller
 {
+
+    public function index() {
+        return view('welcome', ['listItems' => ListItem::all()]);
+    }
+
     public function saveItem(Request $request) {
 
         $newListItem = new ListItem;
